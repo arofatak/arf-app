@@ -1,0 +1,26 @@
+{
+  "name": "administrasi",
+  "version": "1.0.0",
+  "description": "administrasi CRUD",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "arofat abdillah khalim",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.1.0",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "grunt": "^1.0.4",
+    "hbs": "^4.1.0",
+    "jquery": "^3.4.1",
+    "moment": "^2.24.0",
+    "mysql": "^2.18.1",
+    "popper.js": "^1.16.0"
+  },
+  "devDependencies": {}
+}

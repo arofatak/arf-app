@@ -1,0 +1,50 @@
+<!-- Head File -->
+<% title= 'Welcome'; %>
+<%- include ('includes/head'); -%>
+
+<!-- Body File-->
+
+<body>
+    <%- include ('includes/navbar'); -%>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col mb-4">
+                <h1 class="text-center">Selamat Datang di Aplikasi Surat Masuk</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <div class="card bg-light">
+                    <div class="card-header bg-primary text-white">
+                        Header
+                    </div>
+                    <div class="card-body">
+                        Jumlah Surat Masuk yang telah direkam :
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-light">
+                    <div class="card-header bg-success text-white">
+                        Header
+                    </div>
+                    <div class="card-body">
+                        Jumlah Surat Masuk yang telah direkam :
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card bg-light">
+                    <div class="card-header bg-danger text-white">
+                        Header
+                    </div>
+                    <div class="card-body">
+                        Jumlah Surat Masuk yang telah direkam :
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%- include ('includes/script'); -%>
+</body>

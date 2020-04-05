@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<!-- Head File -->
+<%- include ('includes/head'); -%>
+</head>
+
+
+<!-- Body File-->
+<body>
+<%- include ('includes/navbar'); -%>
+    <!-- content -->
+    <div class="container">
+        <h2 class="mt-5">Daftar Surat Masuk</h2>
+        <div class="row">
+            <div class="col-3">
+                <div class="card border-info">
+                    <div class="card-header">
+                        Rekap Surat Masuk
+                    </div>
+                    <div class="card-body">
+                        
+                        <h5 class="card-title">Jumlah Surat Masuk yang sudah direkam</h5>
+                        <p class="card-text" id="hitung">
+                            <%= results.length %> 
+                        </p>
+                        <a href="#" class="btn btn-primary">Lihat Detil</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="card">
+                    <div class="card-header">
+                        <button class="btn btn-success" id="btnTambah" data-toogle="modal"
+                            data-target="#myModalAdd">Tambah</button>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-stripped" id="myTable">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>No</th>
+                                    <th>Nomor Surat</th>
+                                    <th>Tanggal Surat</th>
+                                    <th>Asal Surat</th>
+                                    <th>Perihal</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% results.forEach( (results) => { %>
+                                    <tr>
+                                        <td><%= results.id %></td>
+                                        <td><%= results.no_surat %></td>
+                                        <td><%= results.tanggalSurat %></td>
+                                        <td><%= results.asal_surat %></td>
+                                        <td><%= results.perihal %></td>
+                                        <td>
+                                            <a href="javascript:void(0);" class="btn btn-sm btn-info edit"
+                                            data-id="<%= results.id %>" data-no_surat="<%= results.no_surat %>"
+                                            data-tanggal_surat="<%= results.tanggal_surat %>" data-asal_surat="<%= results.asal_surat %>"
+                                            data-perihal="<%= results.perihal %>">Edit</a>
+                                            <a href="javascript:void(0);" class="btn btn-sm btn-danger delete"
+                                            data-id="<%= results.id %>">Delete</a>
+                                        </td>
+                                    </tr>
+                                <% }); %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Add -->
+    <form action="/save" method="post">
+        <div class="modal fade" id="myModalAdd" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Rekam Surat Masuk</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" name="nomor_surat" class="form-control" placeholder="Nomor Surat"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="tanggal_surat" class="form-control" placeholder="Tanggal Surat"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="asal_surat" class="form-control" placeholder="asal surat">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="perihal" class="form-control" placeholder="perihal">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- Modal Update Produk-->
+    <form action="/update" method="post">
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" name="product_name" class="form-control product_name"
+                                placeholder="Product Name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="text" name="product_price" class="form-control price" placeholder="Price"
+                                required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <input type="hidden" name="id" class="product_id">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
+    <div class="script"> <%- include ('includes/script') -%> </div>
+</body>
+
+</html>
