@@ -17,7 +17,7 @@
     "express-session": "^1.17.0",
     "grunt": "^1.0.4",
     "hbs": "^4.1.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "moment": "^2.24.0",
     "mysql": "^2.18.1",
     "popper.js": "^1.16.0"
